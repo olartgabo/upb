@@ -1,4 +1,4 @@
-### Desencriptar matrices (2x2)
+# Desencriptar matrices (2x2)
 Programa para facilitar la decodificaion de mensajes con el uso de matrices 2x2
 ## How to 
 El programa le pide al usuario que ingrese el mensaje, a manera de ayudar con el diccionario de llaves
