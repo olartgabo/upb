@@ -15,6 +15,7 @@ int main() {
     decode[' '] = 0;
     decode['~'] = 15;
     
+    
     for (int i = 14; i < 28; ++i) {
         decode['A' + i] = i + 2; // from mN 14 to z 27
     }
@@ -47,9 +48,14 @@ int main() {
     cin>>a>>b>>c>>d;
     cout<<"MATRIZ LLAVE: "<<endl;
     cout<<endl;
-
+    vector<int>matriz;
+    
+    matriz.push_back(d);
+    matriz.push_back(-b);
+    matriz.push_back(-c);
+    matriz.push_back(a);
     cout<<a<<" "<<b<<endl<<c<<" "<<d<<endl;
-
+    cout<<endl;
     int det=a*d-b*c;
     cout << "DETERMINANTE:"<<endl;
     cout<<det<<endl;
@@ -71,13 +77,15 @@ int main() {
             //else{cout << "Valor invalido"<< endl;}
         }
     }
-    cout << "INGRESAR LOS NUMEROS DE LA ADJ PARA MOD28 "<<endl;
+    /*
+    cout << "INGRESAR LOS NUMEROS DE LA  PARA MOD28 "<<endl;
     cout << "SE ASUME UNA MATRIZ ADJ DE IZQ A DERECHA 2*2"<<endl;
-    
+    */
     vector<int>matadj;
+    float g;
     for(int i=0;i<4;i++){
-        float g;
-        cin>>g;
+        g=float(matriz[i]);
+        //cin>>g;
         g=g*invertido;
         if(g<0){
             int res;
@@ -100,25 +108,26 @@ int main() {
     }
     }
     cout<<"MATRIZ INVERSA"<<endl;
+    cout<<endl;
     for(int y=0;y<4;y++){
         cout<<matadj[y]<<" ";
         if(y==1){cout<<endl;} 
     }
     cout<<endl;
+    cout<<endl;
 
 
-
-    cout << "INGRESAR LOS NUMEROS A CODIFICAR A MOD28: "<<endl;
+    cout << "INGRESAR LOS NUMEROS PRODUCTO DE A^-1*E A CODIFICAR A MOD28: "<<endl;
     int n;
     vector<int>xd;
     while(cin>>n){
         int a=n%28;
-        cout<<a<<endl;
+        cout<<n<<"="<<a<<endl;
         xd.push_back(a);
         
     }
     cout << "MENSAJE DECODIFICADO"<<endl;
-
+    cout<<endl;
     map<int, char> reverseDecode;
     for (auto& pair : decode) {
         reverseDecode[pair.second] = pair.first; // Reverse the decode map
