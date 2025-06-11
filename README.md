@@ -14,3 +14,6 @@ Despues se ingresa la matriz 2x2, de _derecha a izquierda_ es decir una matriz
 Deberia de ser ingresada en el programa como 
 `2 3 1 5`
 El programa entonces muestra el como se ve la matriz que el usuario ha ingresado 
+
+
+Se esta trabajando en la escalabilidad del proyecto para algebra lineal como una herramienta
